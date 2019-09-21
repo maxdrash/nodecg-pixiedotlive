@@ -5,7 +5,11 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "format": "prettier --write \"**/*.{js,css,md}\"",
+    "posttest": "npm run format",
+    "lint:css": "stylelint '**/*.css'",
+    "pretest": "npm run lint:css"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
@@ -13,12 +17,16 @@
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.5",
     "img-loader": "^3.0.1",
+    "lint-staged": "^9.2.5",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.15.3",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "stylelint": "^11.0.0",
+    "stylelint-config-standard": "^19.0.0",
     "svg-sprite-loader": "^4.1.6",
     "terser-webpack-plugin": "^2.1.0",
     "ts-loader": "^6.1.2",
@@ -39,5 +47,15 @@
   },
   "nodecg": {
     "compatibleRange": ">=1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": ["tslint --fix"],
+    "*.scss": ["stylelint --fix"],
+    "*.{ts,tsx,scss,json,md,html}": ["prettier --write", "git add"]
   }
 }
