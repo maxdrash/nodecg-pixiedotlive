@@ -26,7 +26,8 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "stylelint": "^11.0.0",
-    "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-scss": "^3.11.1",
     "svg-sprite-loader": "^4.1.6",
     "terser-webpack-plugin": "^2.1.0",
     "ts-loader": "^6.1.2",
@@ -54,8 +55,15 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["tslint --fix"],
-    "*.scss": ["stylelint --fix"],
-    "*.{ts,tsx,scss,json,md,html}": ["prettier --write", "git add"]
+    "*.{ts,tsx}": [
+      "tslint --fix"
+    ],
+    "*.scss": [
+      "stylelint --fix"
+    ],
+    "*.{ts,tsx,scss,json,md,html}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
