@@ -11,7 +11,7 @@ const env = process.env.NODE_ENV
 const config = {}
 
 const entryPoints = {
-  index: './src/index.tsx',
+  pixie: './src/pixie.tsx',
 }
 
 const createTemplate = name =>
@@ -33,9 +33,9 @@ config.default = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|js)x?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: modulePath => /node_modules/.test(modulePath) && !/twitchie/.test(modulePath),
       },
       {
         test: /\.html$/,

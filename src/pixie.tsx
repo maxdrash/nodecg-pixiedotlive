@@ -1,12 +1,10 @@
 import { h, render } from 'preact'
 
-import './style/index.scss'
+import PixieOverlay from './themes/pixie'
 
 if ((module as any).hot) {
   // tslint:disable-next-line:no-var-requires
   require('preact/debug')
 }
 
-const PretendComponent = () => <div>dog</div>
-
-render(<PretendComponent />, document.getElementById('app')!)
+render(<PixieOverlay />, document.getElementById('app')!)
