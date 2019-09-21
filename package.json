@@ -4,8 +4,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack",
     "format": "prettier --write \"**/*.{js,css,md}\"",
     "posttest": "npm run format",
     "lint:css": "stylelint '**/*.css'",
