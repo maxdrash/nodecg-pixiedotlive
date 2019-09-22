@@ -6,10 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
-    "format": "prettier --write \"**/*.{js,css,md}\"",
-    "posttest": "npm run format",
-    "lint:css": "stylelint '**/*.css'",
-    "pretest": "npm run lint:css"
+    "watch": "npm run build -- --watch"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
@@ -54,7 +51,15 @@
     "compatibleRange": ">=1.0.0",
     "bundleDependencies": {
       "nodecg-twitchie": "^0.0.1"
-    }
+    },
+    "graphics": [
+      {
+        "file": "pixie.html",
+        "width": 1280,
+        "height": 720,
+        "singleInstance": false
+      }
+    ]
   },
   "husky": {
     "hooks": {

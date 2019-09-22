@@ -24,7 +24,7 @@ const OverlayProvider: FunctionComponent<OverlayProviderProps> = ({ reducers, ca
         ...defaultReducers,
       }
 
-  const currentMiddleware: Middleware[] = [].concat(notificationMiddleware as any, middleware as any)
+  const currentMiddleware: Middleware[] = [notificationMiddleware, ...(middleware || [])]
 
   const store = createOverlayStore(combineReducers(currentReducers), currentMiddleware)
 

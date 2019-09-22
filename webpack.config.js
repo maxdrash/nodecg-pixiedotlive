@@ -35,7 +35,7 @@ config.default = {
       {
         test: /\.(ts|js)x?$/,
         use: 'ts-loader',
-        exclude: modulePath => /node_modules/.test(modulePath) && !/twitchie/.test(modulePath),
+        exclude: /node_modules/,
       },
       {
         test: /\.html$/,
@@ -115,18 +115,19 @@ config.default = {
   },
 
   plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin(), ...Object.keys(entryPoints).map(createTemplate)],
+
+  devtool: 'inline-source-map',
 }
 
 config.production = Object.assign({}, config.default, {
   mode: 'production',
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin({ sourceMap: true }), new OptimizeCSSAssetsPlugin({})],
   },
 })
 
 config.development = Object.assign({}, config.default, {
   mode: 'development',
-  devtool: 'inline-source-map',
 })
 
 module.exports = env === 'development' ? config.development : config.production
