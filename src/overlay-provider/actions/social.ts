@@ -5,12 +5,12 @@ interface SocialAccount {
   username: string
 }
 
-interface UpdateSocialAccountsActtion {
+interface UpdateSocialAccountsAction {
   type: typeof SOCIAL_UPDATE
   payload: SocialAccount[]
 }
 
-type SocialActions = UpdateSocialAccountsActtion
+type SocialActions = UpdateSocialAccountsAction
 
 const updateSocialAccounts = (accounts: SocialAccount[]): SocialActions => ({
   type: SOCIAL_UPDATE,

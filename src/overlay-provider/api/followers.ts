@@ -1,21 +1,12 @@
-import twitchie from 'nodecg-twitchie-graphics'
+import twitchie, { TwitchChannelFollower } from 'nodecg-twitchie-graphics'
 import { Dispatch } from 'redux'
 
 import { queueNotification } from '../actions/notifications'
 
 import getUsername from '../utils/getUsername'
 
-interface User {
-  name: string
-  display_name?: string
-}
-
-interface FollowerNotification {
-  user: User
-}
-
 export default (dispatch: Dispatch) => {
-  const dispatchFollowerNotification = ({ user }: FollowerNotification) => {
+  const dispatchFollowerNotification = ({ user }: TwitchChannelFollower) => {
     dispatch(
       queueNotification({
         topic: 'follower',

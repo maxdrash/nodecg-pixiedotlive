@@ -1,16 +1,10 @@
-import twitchie from 'nodecg-twitchie-graphics'
+import twitchie, { TwitchChannelSubscriber } from 'nodecg-twitchie-graphics'
 
 import { Dispatch } from 'redux'
 import { queueNotification } from '../actions/notifications'
 
-interface Notification {
-  username: string
-  months: string
-  message: string
-}
-
 export default (dispatch: Dispatch) => {
-  const dispatchSubscriberNotification = ({ username, months, message }: Notification) => {
+  const dispatchSubscriberNotification = ({ username, months, message }: TwitchChannelSubscriber) => {
     dispatch(
       queueNotification({
         message,

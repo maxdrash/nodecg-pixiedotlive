@@ -1,15 +1,10 @@
-import twitchie from 'nodecg-twitchie-graphics'
+import twitchie, { TwitchChannelInfo } from 'nodecg-twitchie-graphics'
 
 import { Dispatch } from 'redux'
 import { updateChannelInfo } from '../actions/channel'
 
-interface ChannelInfo {
-  game: string
-  status: string
-}
-
 export default (dispatch: Dispatch) => {
-  const dispatchUpdateChannelInfo = ({ game, status }: ChannelInfo) => {
+  const dispatchUpdateChannelInfo = ({ game, status }: TwitchChannelInfo) => {
     const newChannelInfo = {
       game,
       status,
