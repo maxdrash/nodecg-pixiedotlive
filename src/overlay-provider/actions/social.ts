@@ -1,18 +1,15 @@
-const SOCIAL_UPDATE = 'social/UPDATE'
+import { SocialAccounts } from '../../types'
 
-interface SocialAccount {
-  service: string
-  username: string
-}
+const SOCIAL_UPDATE = 'social/UPDATE'
 
 interface UpdateSocialAccountsAction {
   type: typeof SOCIAL_UPDATE
-  payload: SocialAccount[]
+  payload: SocialAccounts
 }
 
 type SocialActions = UpdateSocialAccountsAction
 
-const updateSocialAccounts = (accounts: SocialAccount[]): SocialActions => ({
+const updateSocialAccounts = (accounts: SocialAccounts): SocialActions => ({
   type: SOCIAL_UPDATE,
   payload: accounts,
 })

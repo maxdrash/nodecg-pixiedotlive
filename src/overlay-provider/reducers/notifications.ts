@@ -1,35 +1,28 @@
+import { Notification } from '../../types'
 import * as actions from '../actions/notifications'
 
-let currentNotificationId = 0
+export type NotificationsState = Notification[]
 
-interface Notification {
-  id: number
-  user: any
-  topic: any
-  scale?: any
-  message?: any
-}
-
-type NotificationsState = Notification[]
+let id = 0
 
 const defaultState: NotificationsState = []
 
-const createNotificationFilter = (idToRemove: number) => (notification: Notification) => notification.id !== idToRemove
+const createNotificationFilter = (idToRemove: string) => (notification: Notification) => notification.id !== idToRemove
 
 export default (state: NotificationsState = defaultState, action: actions.NotificationActions): NotificationsState => {
   switch (action.type) {
     case actions.QUEUE_NOTIFICATION:
-      currentNotificationId += 1
+      id += 1
 
       return [
         ...state,
         {
           ...action.payload,
-          id: currentNotificationId,
+          id: `notification-${id}`,
         },
       ]
     case actions.CLEAR_NOTIFICATION:
-      return state.filter(createNotificationFilter(action.payload.id))
+      return state.filter(createNotificationFilter(action.payload))
     default:
       return state
   }

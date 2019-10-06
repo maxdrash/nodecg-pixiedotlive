@@ -1,9 +1,11 @@
+import { Timer } from '../../types'
+
 const TIMER_UPDATE = 'timer/UPDATE'
 const TIMER_CLEAR = 'timer/CLEAR'
 
 interface TimerUpdateAction {
   type: typeof TIMER_UPDATE
-  payload: string
+  payload: Timer
 }
 
 interface TimerClearAction {

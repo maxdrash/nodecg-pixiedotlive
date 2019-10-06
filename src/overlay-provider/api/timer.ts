@@ -1,12 +1,20 @@
-import twitchie, { TwitchieTimer } from 'nodecg-twitchie-graphics'
+import { createReplicant } from 'nodecg-twitchie'
 
 import { Dispatch } from 'redux'
-import { updateTimer } from '../actions/timer'
+import { Timer } from '../../types'
+import { clearTimer, updateTimer } from '../actions/timer'
 
 export default (dispatch: Dispatch) => {
-  const dispatchUpdateTimer = (timer: TwitchieTimer) => {
-    dispatch(updateTimer(timer))
-  }
+  const timer = createReplicant<Timer>(nodecg, 'brb', {
+    persistent: true,
+  })
 
-  twitchie.timer.on('change', dispatchUpdateTimer)
+  timer.on('change', newTimer => {
+    if (!newTimer) {
+      dispatch(clearTimer())
+      return
+    }
+
+    dispatch(updateTimer(newTimer))
+  })
 }

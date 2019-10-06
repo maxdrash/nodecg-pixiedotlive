@@ -1,6 +1,7 @@
+import { Timer } from '../../types'
 import * as actions from '../actions/timer'
 
-type TimerState = string | null
+export type TimerState = Timer | null
 
 const defaultState: TimerState = null
 

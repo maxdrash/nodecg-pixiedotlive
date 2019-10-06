@@ -1,10 +1,8 @@
-/* global nodecg */
-
 import { applyMiddleware, compose, createStore, Middleware, Reducer } from 'redux'
 
 declare global {
   interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: Function
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any
   }
 }
 

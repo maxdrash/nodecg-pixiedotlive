@@ -1,9 +1,7 @@
+import { BRBStatus } from '../../types'
 import * as actions from '../actions/brb'
 
-interface BRBState {
-  away: boolean
-  message?: string
-}
+export type BRBState = BRBStatus
 
 const defaultState: BRBState = {
   away: false,

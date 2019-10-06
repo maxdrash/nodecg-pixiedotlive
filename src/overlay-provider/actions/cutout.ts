@@ -1,13 +1,6 @@
-const CUTOUT_UPDATE = 'cutout/UPDATE'
+import { Cutout } from '../../types'
 
-interface Cutout {
-  top: string
-  left: string
-  bottom: string
-  right: string
-  height: string
-  width: string
-}
+const CUTOUT_UPDATE = 'cutout/UPDATE'
 
 interface UpdateCutoutAction {
   type: typeof CUTOUT_UPDATE

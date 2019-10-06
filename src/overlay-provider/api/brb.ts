@@ -1,12 +1,23 @@
-import twitchie, { TwitchieBRBStatus } from 'nodecg-twitchie-graphics'
+import { createReplicant } from 'nodecg-twitchie'
 
 import { Dispatch } from 'redux'
+import { BRBStatus } from '../../types'
 import { updateBRB } from '../actions/brb'
 
 export default (dispatch: Dispatch) => {
-  const dispatchUpdateBRB = ({ away = false, message }: TwitchieBRBStatus) => {
-    dispatch(updateBRB(away, message))
-  }
+  const brb = createReplicant<BRBStatus>(nodecg, 'brb', {
+    defaultValue: {
+      away: false,
+      message: undefined,
+    },
+    persistent: true,
+  })
 
-  twitchie.brb.on('change', dispatchUpdateBRB)
+  brb.on('change', status => {
+    if (!status) {
+      return
+    }
+
+    dispatch(updateBRB(status))
+  })
 }

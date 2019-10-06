@@ -1,14 +1,12 @@
 import { AnyAction, Middleware } from 'redux'
+
+import { Notification } from '../../types'
 import * as chatActions from '../actions/chat'
 import * as notificationActions from '../actions/notifications'
 
 interface NotificationAction {
   type: string
-  payload: {
-    user: string
-    topic: string
-    message: string
-  }
+  payload: Notification
 }
 
 const isNotificationAction = ({ type }: AnyAction) => type === notificationActions.QUEUE_NOTIFICATION
@@ -18,10 +16,8 @@ const notificationMiddleware: Middleware = () => next => (action: AnyAction | No
     return next(action)
   }
 
-  const { payload } = action
-  const { user, topic, message } = payload
-
-  const chatAction = chatActions.getMessage({ username: user }, message, topic)
+  const { payload } = action as NotificationAction
+  const chatAction = chatActions.getNotification(payload)
 
   return next(chatAction)
 }

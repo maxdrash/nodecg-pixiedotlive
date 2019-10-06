@@ -1,5 +1,7 @@
-const getNotifications = (state: any) => state.notifications
+import { OverlayState } from '../reducers'
 
-const getNextNotification = (state: any) => getNotifications(state)[0]
+const getNotifications = (state: OverlayState) => state.notifications
+
+const getNextNotification = (state: OverlayState) => getNotifications(state)[0]
 
 export { getNotifications, getNextNotification }

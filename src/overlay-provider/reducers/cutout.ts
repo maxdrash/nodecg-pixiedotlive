@@ -1,13 +1,7 @@
+import { Cutout } from '../../types'
 import * as actions from '../actions/cutout'
 
-interface CutoutState {
-  top: string
-  left: string
-  bottom: string
-  right: string
-  height: string
-  width: string
-}
+export type CutoutState = Cutout
 
 const defaultState: CutoutState = {
   top: '0',

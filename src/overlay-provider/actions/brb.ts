@@ -1,21 +1,17 @@
+import { BRBStatus } from '../../types'
+
 const BRB_UPDATE = 'brb/UPDATE'
 
 interface BRBUpdateAction {
   type: typeof BRB_UPDATE
-  payload: {
-    away: boolean
-    message?: string
-  }
+  payload: BRBStatus
 }
 
 type BRBActions = BRBUpdateAction
 
-const updateBRB = (away: boolean, message?: string): BRBActions => ({
+const updateBRB = (brbStatus: BRBStatus): BRBActions => ({
   type: BRB_UPDATE,
-  payload: {
-    away,
-    message,
-  },
+  payload: brbStatus,
 })
 
 export { BRB_UPDATE, updateBRB, BRBActions }

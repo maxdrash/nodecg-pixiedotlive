@@ -1,7 +1,9 @@
-const getBRB = (state: any) => state.brb
+import { OverlayState } from '../reducers'
 
-const isAway = (state: any) => getBRB(state).isAway
+const getBRB = (state: OverlayState) => state.brb
 
-const getMessage = (state: any) => getBRB(state).message
+const isAway = (state: OverlayState) => getBRB(state).away
+
+const getMessage = (state: OverlayState) => getBRB(state).message
 
 export { getBRB, isAway, getMessage }

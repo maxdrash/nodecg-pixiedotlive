@@ -1,7 +1,9 @@
-const getChat = (state: any) => state.chat
+import { OverlayState } from '../reducers'
 
-const getChatChannel = (state: any) => getChat(state).channel
+const getChat = (state: OverlayState) => state.chat
 
-const getChatMessages = (state: any) => getChat(state).messages
+const getChatChannel = (state: OverlayState) => getChat(state).channel
+
+const getChatMessages = (state: OverlayState) => getChat(state).messages
 
 export { getChat, getChatChannel, getChatMessages }

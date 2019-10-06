@@ -1,10 +1,13 @@
+import { ChatMessage } from 'nodecg-twitchie'
+
+import { ChatMessageTypeWithNotifications, ChatNotificationMessage } from '../../types'
 import * as actions from '../actions/chat'
 
 let id = 0
 
-interface ChatState {
+export interface ChatState {
   channel: string
-  messages: any[]
+  messages: Array<ChatMessage | ChatNotificationMessage>
 }
 
 const defaultState: ChatState = {
@@ -12,7 +15,13 @@ const defaultState: ChatState = {
   messages: [],
 }
 
-const createNaughtyUserFilter = (user: any) => (message: any) => user.id !== message.user.id
+const createNaughtyUserFilter = (user: string) => (message: ChatMessage | ChatNotificationMessage) => {
+  if (message.type === ChatMessageTypeWithNotifications.NOTIFICATION) {
+    return
+  }
+
+  return user !== message.user.name
+}
 
 export default (state: ChatState = defaultState, action: actions.ChatActions): ChatState => {
   switch (action.type) {
@@ -24,8 +33,8 @@ export default (state: ChatState = defaultState, action: actions.ChatActions): C
         messages: [
           ...state.messages,
           {
-            ...action.payload,
-            id,
+            ...action.payload.message,
+            id: `message-${id}`,
           },
         ],
       }
@@ -35,9 +44,9 @@ export default (state: ChatState = defaultState, action: actions.ChatActions): C
         messages: state.messages.filter(createNaughtyUserFilter(action.payload.user)),
       }
     case actions.CHAT_JOIN_CHANNEL:
-      return action.payload.channel !== state.channel
+      return action.payload !== state.channel
         ? {
-            channel: action.payload.channel,
+            channel: action.payload,
             messages: [],
           }
         : state

@@ -1,19 +1,17 @@
-import twitchie, { TwitchChannelSubscriber } from 'nodecg-twitchie-graphics'
+import twitchie from 'nodecg-twitchie'
 
 import { Dispatch } from 'redux'
 import { queueNotification } from '../actions/notifications'
 
 export default (dispatch: Dispatch) => {
-  const dispatchSubscriberNotification = ({ username, months, message }: TwitchChannelSubscriber) => {
+  twitchie.on('user.subscription', subscriber => {
     dispatch(
       queueNotification({
-        message,
         topic: 'subscriber',
-        user: username,
-        scale: months,
+        user: subscriber.name,
+        message: subscriber.message,
+        scale: subscriber.months,
       })
     )
-  }
-
-  twitchie.on('channel.subscription', dispatchSubscriberNotification)
+  })
 }
