@@ -1,6 +1,5 @@
 import { ChatActionPayload, ChatBanPayload, ChatMessagePayload, ChatTimeoutPayload } from 'nodecg-twitchie'
-
-import { Notification } from '../../types'
+import { Notification } from 'nodecg-twitchie-graphics'
 
 const CHAT_MESSAGE = 'chat/MESSAGE'
 const CHAT_NOTIFICATION = 'chat/NOTIFICATION'

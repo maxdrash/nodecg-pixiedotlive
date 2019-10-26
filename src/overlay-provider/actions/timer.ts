@@ -1,4 +1,4 @@
-import { Timer } from '../../types'
+import { Timer } from 'nodecg-twitchie-graphics'
 
 const TIMER_UPDATE = 'timer/UPDATE'
 const TIMER_CLEAR = 'timer/CLEAR'

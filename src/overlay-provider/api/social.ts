@@ -1,16 +1,10 @@
-import { createReplicant } from 'nodecg-twitchie'
+import twitchie from 'nodecg-twitchie-graphics'
 
 import { Dispatch } from 'redux'
-import { SocialAccounts } from '../../types'
 import { updateSocialAccounts } from '../actions/social'
 
 export default (dispatch: Dispatch) => {
-  const socialAccounts = createReplicant<SocialAccounts>(nodecg, 'social', {
-    defaultValue: [],
-    persistent: true,
-  })
-
-  socialAccounts.on('change', newAccounts => {
+  twitchie.graphics.social.on('change', newAccounts => {
     dispatch(updateSocialAccounts(newAccounts || []))
   })
 }

@@ -1,4 +1,5 @@
-import { Timer } from '../../types'
+import { Timer } from 'nodecg-twitchie-graphics'
+
 import * as actions from '../actions/timer'
 
 export type TimerState = Timer | null

@@ -1,4 +1,4 @@
-import { Cutout } from '../../types'
+import { Cutout } from 'nodecg-twitchie-graphics'
 
 const CUTOUT_UPDATE = 'cutout/UPDATE'
 

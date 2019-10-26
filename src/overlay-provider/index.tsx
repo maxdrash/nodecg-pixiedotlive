@@ -1,5 +1,5 @@
 import { FunctionComponent, h } from 'preact'
-import { Provider } from 'preact-redux'
+import { Provider } from 'react-redux'
 import { combineReducers, Middleware, Reducer, Store } from 'redux'
 
 import bindDispatchToAPIEvents from './api'
@@ -36,7 +36,7 @@ const OverlayProvider: FunctionComponent<OverlayProviderProps> = ({ reducers, ca
 
   return (
     <Provider store={store}>
-      <div id="overlay">{children}</div>
+      <div class="o-overlay">{children}</div>
     </Provider>
   )
 }

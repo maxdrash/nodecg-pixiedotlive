@@ -1,0 +1,20 @@
+.c-player-scene {
+}
+
+.c-player-scene__body {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: $overlay-video-width;
+  height: 100%;
+}
+
+.c-player-scene__sidebar {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100% - $overlay-video-width;
+}

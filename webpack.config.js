@@ -112,6 +112,11 @@ config.default = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+
+    alias: {
+      react: 'preact/compat',
+      'react-dom': 'preact/compat',
+    },
   },
 
   plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin(), ...Object.keys(entryPoints).map(createTemplate)],

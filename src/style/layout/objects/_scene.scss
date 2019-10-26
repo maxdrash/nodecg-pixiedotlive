@@ -1,0 +1,46 @@
+.o-scene {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: $overlay-width;
+  min-height: $overlay-height;
+  margin: 0;
+  padding: 0;
+
+  backface-visibility: hidden;
+  transition: all 1.3s ease-in-out;
+  transform: none;
+}
+
+.o-scene--fade {
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.o-scene--cover {
+  height: $overlay-height * 2;
+
+  transition: all 2.3s ease-in-out;
+  transform: translateY(-100%);
+
+  &.is-visible {
+    transform: none;
+  }
+}
+
+.o-scene__layer {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: $overlay-width;
+  min-height: $overlay-height;
+  margin: 0;
+  padding: 0;
+}

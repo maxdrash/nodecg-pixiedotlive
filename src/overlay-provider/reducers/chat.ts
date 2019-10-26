@@ -1,6 +1,6 @@
 import { ChatMessage } from 'nodecg-twitchie'
+import { ChatMessageTypeWithNotifications, ChatNotificationMessage } from 'nodecg-twitchie-graphics'
 
-import { ChatMessageTypeWithNotifications, ChatNotificationMessage } from '../../types'
 import * as actions from '../actions/chat'
 
 let id = 0

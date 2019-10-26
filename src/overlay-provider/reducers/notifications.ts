@@ -1,4 +1,5 @@
-import { Notification } from '../../types'
+import { Notification } from 'nodecg-twitchie-graphics'
+
 import * as actions from '../actions/notifications'
 
 export type NotificationsState = Notification[]

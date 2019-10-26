@@ -1,4 +1,5 @@
-import { SocialAccounts } from '../../types'
+import { SocialAccounts } from 'nodecg-twitchie-graphics'
+
 import * as actions from '../actions/social'
 
 export type SocialState = SocialAccounts

@@ -1,4 +1,4 @@
-import { Notification } from '../../types'
+import { Notification } from 'nodecg-twitchie-graphics'
 
 const QUEUE_NOTIFICATION = 'notifications/QUEUE_NOTIFICATION'
 const CLEAR_NOTIFICATION = 'notifications/CLEAR_NOTIFICATION'

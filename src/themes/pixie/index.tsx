@@ -1,11 +1,15 @@
 import { h } from 'preact'
 import OverlayProvider from '../../overlay-provider'
 
-import './pixie.scss'
+import BRB from '../../scenes/BRB'
+import Player from '../../scenes/Player'
+
+import '../../style/pixie.scss'
 
 const PixieOverlay = () => (
   <OverlayProvider>
-    <div>hello :)</div>
+    <BRB />
+    <Player />
   </OverlayProvider>
 )
 

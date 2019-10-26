@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+
+html,
+body {
+  background: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+body {
+  font: $font-weight-regular $font-size $body-font-family;
+  line-height: $line-height;
+  letter-spacing: $body-letter-spacing;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 auto 0.2em;
+
+  font-family: $header-font-family;
+  letter-spacing: $header-letter-spacing;
+  line-height: $header-line-height;
+  text-transform: uppercase;
+  font-weight: $font-weight-heavy;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}

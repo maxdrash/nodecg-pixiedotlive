@@ -1,4 +1,4 @@
-import twitchie from 'nodecg-twitchie'
+import twitchie from 'nodecg-twitchie-graphics'
 
 import { Dispatch } from 'redux'
 import { queueNotification } from '../actions/notifications'

@@ -1,6 +1,6 @@
+import { Notification } from 'nodecg-twitchie-graphics'
 import { AnyAction, Middleware } from 'redux'
 
-import { Notification } from '../../types'
 import * as chatActions from '../actions/chat'
 import * as notificationActions from '../actions/notifications'
 

@@ -1,4 +1,7 @@
-import twitchie from 'nodecg-twitchie'
+import test from 'nodecg-twitchie'
+import twitchie, { createTwitchieStore } from 'nodecg-twitchie-graphics'
+
+console.log(test, twitchie, createTwitchieStore)
 
 import { Dispatch } from 'redux'
 import { updateGameInfo } from '../actions/game'

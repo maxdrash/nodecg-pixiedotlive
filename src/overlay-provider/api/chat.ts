@@ -1,4 +1,4 @@
-import twitchie, { ChatActionPayload, ChatBanPayload, ChatMessagePayload, ChatTimeoutPayload } from 'nodecg-twitchie'
+import twitchie from 'nodecg-twitchie-graphics'
 import { Dispatch } from 'redux'
 
 import { clearUserMessages, getMessage, joinChannel } from '../actions/chat'
@@ -16,17 +16,19 @@ export default (dispatch: Dispatch) => {
     dispatch(joinChannel(channel))
   })
 
-  const dispatchClearUserMessage = (modAction: ChatBanPayload | ChatTimeoutPayload) => {
-    dispatch(clearUserMessages(modAction))
-  }
-
-  const dispatchChatMessage = (message: ChatActionPayload | ChatMessagePayload) => {
+  twitchie.on('chat.action', message => {
     dispatch(getMessage(message))
-  }
+  })
 
-  twitchie.on('chat.action', dispatchChatMessage)
-  twitchie.on('chat.message', dispatchChatMessage)
+  twitchie.on('chat.message', message => {
+    dispatch(getMessage(message))
+  })
 
-  twitchie.on('chat.ban', dispatchClearUserMessage)
-  twitchie.on('chat.timeout', dispatchClearUserMessage)
+  twitchie.on('chat.ban', modAction => {
+    dispatch(clearUserMessages(modAction))
+  })
+
+  twitchie.on('chat.timeout', modAction => {
+    dispatch(clearUserMessages(modAction))
+  })
 }

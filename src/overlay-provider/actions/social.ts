@@ -1,4 +1,4 @@
-import { SocialAccounts } from '../../types'
+import { SocialAccounts } from 'nodecg-twitchie-graphics'
 
 const SOCIAL_UPDATE = 'social/UPDATE'
 

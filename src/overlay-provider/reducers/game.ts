@@ -1,4 +1,5 @@
 import { GameInfo } from 'nodecg-twitchie'
+
 import * as actions from '../actions/game'
 
 export type GameState = GameInfo

@@ -1,4 +1,5 @@
-import { BRBStatus } from '../../types'
+import { BRBStatus } from 'nodecg-twitchie-graphics'
+
 import * as actions from '../actions/brb'
 
 export type BRBState = BRBStatus

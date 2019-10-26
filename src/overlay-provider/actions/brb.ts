@@ -1,4 +1,4 @@
-import { BRBStatus } from '../../types'
+import { BRBStatus } from 'nodecg-twitchie-graphics'
 
 const BRB_UPDATE = 'brb/UPDATE'
 

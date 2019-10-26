@@ -1,4 +1,5 @@
-import { Cutout } from '../../types'
+import { Cutout } from 'nodecg-twitchie-graphics'
+
 import * as actions from '../actions/cutout'
 
 export type CutoutState = Cutout
