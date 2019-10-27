@@ -11,6 +11,10 @@ interface SceneProps {
   className?: string
 }
 
+interface LayerProps {
+  className?: string
+}
+
 const Scene: FunctionComponent<SceneProps> = ({ className, hideWhenAway, showWhenAway, children }) => {
   const brb = useSelector(getBRB)
 
@@ -37,4 +41,9 @@ const Scene: FunctionComponent<SceneProps> = ({ className, hideWhenAway, showWhe
   )
 }
 
+const Layer: FunctionComponent<LayerProps> = ({ className, children }) => (
+  <div className={classnames('o-scene__layer', className)}>{children}</div>
+)
+
+export { Layer }
 export default Scene

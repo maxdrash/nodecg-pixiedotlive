@@ -1,0 +1,19 @@
+.c-social-accounts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.c-social-accounts__item {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 1em 0 0;
+  line-height: 1;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

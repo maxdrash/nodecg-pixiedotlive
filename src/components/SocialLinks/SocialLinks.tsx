@@ -3,18 +3,15 @@ import { useSelector } from 'react-redux'
 
 import { getSocialAccounts } from 'nodecg-twitchie-graphics'
 
-import SocialLink from './SocialLink'
-
-import '../assets/icons/twitch.svg'
-import '../assets/icons/twitter.svg'
+import SocialLinkItem from './SocialLinkItem'
 
 const SocialLinks = () => {
   const services = useSelector(getSocialAccounts)
 
   return (
-    <div>
+    <div className="c-social-accounts">
       {services.map(({ service, username }) => (
-        <SocialLink service={service} username={username} />
+        <SocialLinkItem className="c-social-accounts__item" service={service} username={username} />
       ))}
     </div>
   )
