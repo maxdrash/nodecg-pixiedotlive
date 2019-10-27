@@ -1,15 +1,12 @@
-import { Notification } from 'nodecg-twitchie-graphics'
+import { getNotificationAction, Notification, QUEUE_NOTIFICATION } from 'nodecg-twitchie-graphics'
 import { AnyAction, Middleware } from 'redux'
-
-import * as chatActions from '../actions/chat'
-import * as notificationActions from '../actions/notifications'
 
 interface NotificationAction {
   type: string
   payload: Notification
 }
 
-const isNotificationAction = ({ type }: AnyAction) => type === notificationActions.QUEUE_NOTIFICATION
+const isNotificationAction = ({ type }: AnyAction) => type === QUEUE_NOTIFICATION
 
 const notificationMiddleware: Middleware = () => next => (action: AnyAction | NotificationAction) => {
   if (!isNotificationAction(action)) {
@@ -17,7 +14,7 @@ const notificationMiddleware: Middleware = () => next => (action: AnyAction | No
   }
 
   const { payload } = action as NotificationAction
-  const chatAction = chatActions.getNotification(payload)
+  const chatAction = getNotificationAction(payload)
 
   return next(chatAction)
 }

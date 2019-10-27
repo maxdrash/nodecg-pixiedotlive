@@ -1,17 +1,22 @@
+import classnames from 'classnames'
 import { FunctionComponent, h } from 'preact'
 import { useSelector } from 'react-redux'
 
-import { getCutout } from 'nodecg-twitchie-graphics'
+import { Cutout, getCutout } from 'nodecg-twitchie-graphics'
 
-const generateClipPath = ({ top = '0', bottom = '100%', left = '0', right = '100%' } = {}) =>
+interface CutoutWrapperProps {
+  className?: string
+}
+
+const generateClipPath = ({ top = 0, bottom = 0, left = 0, right = 0 }: Cutout) =>
   `polygon(0 0, 0 100%, 100% 100%, 100% 0, 0 0, ${left}px ${top}px, ${right}px ${top}px, ${right}px ${bottom}px, ${left}px ${bottom}px, ${left}px ${top}px)`
 
-const CutoutWrapper: FunctionComponent = ({ children }) => {
+const CutoutWrapper: FunctionComponent<CutoutWrapperProps> = ({ className, children }) => {
   const cutout = useSelector(getCutout)
 
   return (
     <div
-      className="layer"
+      className={classnames('o-scene__layer', className)}
       style={{
         '-webkit-clip-path': generateClipPath(cutout),
       }}
