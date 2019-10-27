@@ -1,9 +1,9 @@
 import { FunctionComponent, h } from 'preact'
 
+import Chat from '../components/Chat'
 import CutoutWrapper from '../components/CutoutWrapper'
 import NowPlaying from '../components/GameInfo'
 import Scene, { Layer } from '../components/Scene'
-import Chat from '../components/Chat'
 import SocialLinks from '../components/SocialLinks'
 import { SixteenNineVideoPlaceholder } from '../components/VideoPlaceholder'
 
