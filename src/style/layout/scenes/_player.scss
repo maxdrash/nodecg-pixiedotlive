@@ -18,3 +18,19 @@
   height: 100%;
   width: 100% - $overlay-video-width;
 }
+
+.c-player {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.c-player__spacer {
+  flex-grow: 1;
+}
+
+.c-player__video {
+  flex-grow: 0;
+  flex-shrink: 0;
+}

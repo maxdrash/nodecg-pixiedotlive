@@ -1,3 +1,4 @@
+import classnames from 'classnames'
 import { FunctionComponent, h } from 'preact'
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks'
 import { useDispatch } from 'react-redux'
@@ -13,9 +14,10 @@ const SCALE = {
 
 interface VideoPlaceholderProps {
   scale: number
+  className: string
 }
 
-const VideoPlaceholder: FunctionComponent<VideoPlaceholderProps> = ({ scale }) => {
+const VideoPlaceholder: FunctionComponent<VideoPlaceholderProps> = ({ scale, className }) => {
   const dispatch = useDispatch()
   const updateCutout = useCallback((cutout: Cutout) => dispatch(updateCutoutAction(cutout)), [dispatch])
 
@@ -49,7 +51,7 @@ const VideoPlaceholder: FunctionComponent<VideoPlaceholderProps> = ({ scale }) =
 
   return (
     <div
-      className="spacer"
+      className={classnames('o-spacer', className)}
       ref={placeholderRef}
       style={{
         height: placeholderWidth * scale,
@@ -60,10 +62,10 @@ const VideoPlaceholder: FunctionComponent<VideoPlaceholderProps> = ({ scale }) =
   )
 }
 
-const SquareVideoPlaceholder = () => <VideoPlaceholder scale={SCALE.square} />
-const FourThreeVideoPlaceholder = () => <VideoPlaceholder scale={SCALE.fourThree} />
-const EightSevenVideoPlaceholder = () => <VideoPlaceholder scale={SCALE.eightSeven} />
-const SixteenNineVideoPlaceholder = () => <VideoPlaceholder scale={SCALE.sixteenNine} />
+const SquareVideoPlaceholder = (props: any) => <VideoPlaceholder scale={SCALE.square} {...props} />
+const FourThreeVideoPlaceholder = (props: any) => <VideoPlaceholder scale={SCALE.fourThree} {...props} />
+const EightSevenVideoPlaceholder = (props: any) => <VideoPlaceholder scale={SCALE.eightSeven} {...props} />
+const SixteenNineVideoPlaceholder = (props: any) => <VideoPlaceholder scale={SCALE.sixteenNine} {...props} />
 
 export { SquareVideoPlaceholder, FourThreeVideoPlaceholder, EightSevenVideoPlaceholder, SixteenNineVideoPlaceholder }
 

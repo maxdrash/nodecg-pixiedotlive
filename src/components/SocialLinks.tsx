@@ -5,8 +5,8 @@ import { getSocialAccounts } from 'nodecg-twitchie-graphics'
 
 import SocialLink from './SocialLink'
 
-import '../../images/icons/twitch.svg'
-import '../../images/icons/twitter.svg'
+import '../assets/icons/twitch.svg'
+import '../assets/icons/twitter.svg'
 
 const SocialLinks = () => {
   const services = useSelector(getSocialAccounts)
