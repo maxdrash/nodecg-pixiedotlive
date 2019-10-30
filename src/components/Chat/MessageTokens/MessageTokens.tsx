@@ -1,5 +1,5 @@
 import { ChatMessageToken } from 'nodecg-twitchie'
-import { FunctionComponent, h } from 'preact'
+import { Fragment, FunctionComponent, h } from 'preact'
 
 import CheerToken from './CheerToken'
 import EmoteToken from './EmoteToken'
@@ -10,7 +10,7 @@ interface MessageTokensProps {
 }
 
 const MessageTokens: FunctionComponent<MessageTokensProps> = ({ tokens }) => (
-  <div className="c-message-tokens">
+  <Fragment>
     {tokens.map(token => {
       if (token.type === 'emote') {
         return <EmoteToken token={token} />
@@ -22,7 +22,7 @@ const MessageTokens: FunctionComponent<MessageTokensProps> = ({ tokens }) => (
 
       return <TextToken token={token} />
     })}
-  </div>
+  </Fragment>
 )
 
 export default MessageTokens

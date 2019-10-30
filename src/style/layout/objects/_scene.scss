@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: $overlay-width;
-  min-height: $overlay-height;
+  height: $overlay-height;
   margin: 0;
   padding: 0;
 
@@ -37,8 +37,8 @@
   z-index: 2;
   top: 0;
   left: 0;
-  width: $overlay-width;
-  min-height: $overlay-height;
+  bottom: 0;
+  right: 0;
   margin: 0;
   padding: 0;
 }

@@ -43,11 +43,13 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "@types/react-motion": "0.0.29",
     "classnames": "^2.2.6",
     "nodecg-twitchie": "2.0.3",
     "nodecg-twitchie-graphics": "2.0.6",
     "preact": "^10.0.1",
     "preact-context": "^1.1.4",
+    "react-motion": "^0.5.2",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4"
   },

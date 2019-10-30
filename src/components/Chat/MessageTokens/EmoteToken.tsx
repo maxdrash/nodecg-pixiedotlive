@@ -1,10 +1,12 @@
 import { ChatEmoteMessageToken } from 'nodecg-twitchie'
-import { Fragment, FunctionComponent, h } from 'preact'
+import { FunctionComponent, h } from 'preact'
 
 interface EmoteTokenProps {
   token: ChatEmoteMessageToken
 }
 
-const EmoteToken: FunctionComponent<EmoteTokenProps> = ({ token }) => <Fragment>{token.name}</Fragment>
+const EmoteToken: FunctionComponent<EmoteTokenProps> = ({ token }) => (
+  <img src={`https://static-cdn.jtvnw.net/emoticons/v1/${token.id}/3.0`} alt={token.name} className="o-icon" />
+)
 
 export default EmoteToken
