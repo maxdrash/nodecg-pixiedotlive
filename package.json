@@ -60,6 +60,18 @@
     },
     "graphics": [
       {
+        "file": "bloodstained.html",
+        "width": 1280,
+        "height": 720,
+        "singleInstance": false
+      },
+      {
+        "file": "lwa.html",
+        "width": 1280,
+        "height": 720,
+        "singleInstance": false
+      },
+      {
         "file": "pixie.html",
         "width": 1280,
         "height": 720,

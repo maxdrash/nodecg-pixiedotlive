@@ -1,11 +1,12 @@
 import { FunctionComponent, h } from 'preact'
 
-import Chat from '../components/Chat'
-import CutoutWrapper from '../components/CutoutWrapper'
+import Chat from '../../../components/Chat'
+import CutoutWrapper from '../../../components/CutoutWrapper'
+import Scene, { Layer } from '../../../components/Scene'
+import { SixteenNineVideoPlaceholder } from '../../../components/VideoPlaceholder'
 import NowPlaying from '../components/GameInfo'
-import Scene, { Layer } from '../components/Scene'
+import Message from '../components/Message'
 import SocialLinks from '../components/SocialLinks'
-import { SixteenNineVideoPlaceholder } from '../components/VideoPlaceholder'
 
 const Player: FunctionComponent = () => (
   <Scene className="c-player-scene">
@@ -23,11 +24,11 @@ const Player: FunctionComponent = () => (
           <NowPlaying />
         </div>
       </Layer>
-
-      <Layer className="c-player-scene__sidebar">
-        <Chat />
-      </Layer>
     </CutoutWrapper>
+
+    <Layer className="c-player-scene__sidebar">
+      <Chat messageComponent={Message} />
+    </Layer>
   </Scene>
 )
 

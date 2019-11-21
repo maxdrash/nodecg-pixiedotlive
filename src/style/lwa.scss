@@ -1,0 +1,182 @@
+$body-font-family: 'Lollipop';
+$header-font-family: 'Pomelo';
+$body-letter-spacing: 0.025em;
+$font-size: 24px;
+
+@import 'layout/settings';
+@import 'layout/base';
+
+body {
+  color: #fff;
+}
+
+.c-chat__wrapper {
+  padding: 0.4em 0 0.4em 0.2em;
+}
+
+.c-chat-message {
+  position: relative;
+  margin: 0 0 0.4em;
+  padding: 0.4em;
+  background: rgba(0, 0, 0, 0.33);
+  border-top: 1.5px solid #c4874c;
+  border-top-left-radius: 2px;
+  font-size: 0.8em;
+  filter: drop-shadow(0 0 2px #68381f);
+  animation-name: lwa-message-popin;
+
+  &__curl {
+    position: absolute;
+    top: -2px;
+    right: 99%;
+    width: 0.8em;
+    fill: #c4874c;
+  }
+
+  &__user {
+    padding: 0 0.25em 0.25em;
+    margin-bottom: 0.05em;
+    display: inline-block;
+    color: #fffaef;
+    filter: drop-shadow(0 0 2px #68381f);
+    border-bottom: 2px solid #c4874c;
+  }
+
+  &__message {
+    padding: 0.25em 0.25em 0;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.c-wiggle-text {
+  font-family: $header-font-family;
+
+  &__letter {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__spacer {
+    width: 0.35em;
+  }
+}
+
+.c-game-info {
+  color: #fbe3a4;
+}
+
+.c-social-accounts {
+  color: #231349;
+}
+
+.c-brb__text {
+  z-index: 6;
+}
+
+.c-brb__logo {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 40%;
+}
+
+.c-brb__message {
+  position: absolute;
+  left: 5%;
+  width: 40%;
+  top: 78%;
+  text-align: center;
+  font-size: 2em;
+}
+
+.c-witch {
+  position: absolute;
+  animation: witch-float 5s ease-in-out infinite;
+  animation-fill-mode: both;
+  z-index: 5;
+}
+
+.c-witch--dani {
+  animation-delay: 4s;
+  right: 24%;
+  top: 9.5%;
+  height: 77%;
+  z-index: 5;
+}
+
+.c-witch--yen {
+  right: 5%;
+  top: 21%;
+  height: 54.5%;
+  z-index: 4;
+}
+
+.c-clouds {
+  animation: cloud-roll;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  background-position: 0% 0%;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  width: 200%;
+}
+
+.c-clouds--back {
+  background-image: url('../assets/themes/lwa/clouds-bg.png');
+  z-index: 1;
+  animation-duration: 50s;
+}
+
+.c-clouds--middle {
+  background-image: url('../assets/themes/lwa/clouds-md.png');
+  z-index: 2;
+  animation-duration: 30.5s;
+}
+
+.c-clouds--front {
+  background-image: url('../assets/themes/lwa/clouds-fg.png');
+  z-index: 3;
+  animation-duration: 13.5s;
+}
+
+@keyframes witch-float {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes cloud-roll {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes lwa-message-popin {
+  0% {
+    opacity: 0;
+    transform: translateY(33%);
+  }
+
+  85% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

@@ -12,6 +12,7 @@ interface SceneProps {
 }
 
 interface LayerProps {
+  style?: Record<string, string>
   className?: string
 }
 
@@ -41,8 +42,10 @@ const Scene: FunctionComponent<SceneProps> = ({ className, hideWhenAway, showWhe
   )
 }
 
-const Layer: FunctionComponent<LayerProps> = ({ className, children }) => (
-  <div className={classnames('o-scene__layer', className)}>{children}</div>
+const Layer: FunctionComponent<LayerProps> = ({ style, className, children }) => (
+  <div style={style} className={classnames('o-scene__layer', className)}>
+    {children}
+  </div>
 )
 
 export { Layer }

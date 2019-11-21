@@ -11,7 +11,9 @@ const env = process.env.NODE_ENV
 const config = {}
 
 const entryPoints = {
+  bloodstained: './src/bloodstained.tsx',
   pixie: './src/pixie.tsx',
+  lwa: './src/lwa.tsx',
 }
 
 const createTemplate = name =>
@@ -49,7 +51,7 @@ config.default = {
         ],
       },
       {
-        test: /\.(eot|ttf|otf|woff|woff2)$/i,
+        test: /\.(webm|mp4|eot|ttf|otf|woff|woff2)$/i,
         use: {
           loader: 'file-loader',
           options: {

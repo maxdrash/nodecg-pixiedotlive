@@ -1,0 +1,26 @@
+@import 'layout/settings';
+@import 'layout/base';
+
+body {
+  color: #fff;
+  background: #000;
+}
+
+.c-brb-scene {
+}
+
+.c-brb-scene__background {
+  background: url('../assets/themes/bloodstained/brb.jpg');
+  background-size: cover;
+}
+
+.c-logo {
+  width: 60%;
+}
+
+.c-dani {
+  position: absolute;
+  top: -5%;
+  right: 5%;
+  height: 110%;
+}
