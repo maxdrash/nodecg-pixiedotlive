@@ -6,7 +6,8 @@
   padding: 1em;
 }
 
-.c-chat-message {
+.c-chat-item {
+  margin: 0 auto 0.6em;
   animation: message-popin 0.5s ease-in-out;
   animation-iteration-count: 1;
   animation-delay: 0.05s;

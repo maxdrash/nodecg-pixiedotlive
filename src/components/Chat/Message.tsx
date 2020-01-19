@@ -8,7 +8,7 @@ interface MessageProps {
 }
 
 const Message: FunctionComponent<MessageProps> = ({ message }) => (
-  <div className="c-chat-message">
+  <div className="c-chat-item c-chat-message">
     <div className="c-chat-message__user">{message.user.name}</div>
     <div className="c-chat-message__message">
       <MessageTokens tokens={message.tokens} />

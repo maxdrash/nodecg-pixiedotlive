@@ -1,20 +1,27 @@
 import { ChatNotificationMessage } from 'nodecg-twitchie-graphics'
-import { FunctionComponent, h } from 'preact'
+import { Fragment, FunctionComponent, h } from 'preact'
 
 interface NotificationProps {
   notification: ChatNotificationMessage
 }
 
 const Notification: FunctionComponent<NotificationProps> = ({ notification }) => (
-  <div className="c-chat-message">
-    <div className="c-chat-message__user">{notification.user}</div>
+  <Fragment>
+    <div className="c-chat-item c-chat-notification">
+      <span className="c-chat-notification__user">{notification.user}&nbsp;</span>
+      <span className="c-chat-notification__topic">
+        {notification.topic === 'follower' && <span>just followed!</span>}
+        {notification.topic === 'subscriber' && <span>just subscribed!</span>}
+      </span>
+    </div>
 
-    {notification.topic === 'follower' && <div className="c-chat-message__user">just followed!</div>}
-
-    {notification.topic === 'subscriber' && <div className="c-chat-message__user">just subscribed!</div>}
-
-    <div className="c-chat-message__message">{notification.message}</div>
-  </div>
+    {notification.message && (
+      <div className="c-chat-item c-chat-message">
+        <div className="c-chat-message__user">{notification.user}</div>
+        <div className="c-chat-message__message">{notification.message}</div>
+      </div>
+    )}
+  </Fragment>
 )
 
 export { NotificationProps }
