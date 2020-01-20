@@ -109,12 +109,12 @@ body {
   }
 
   100% {
-    transform: translateY(-50%) translateX(50%);
+    transform: translateY(-100%) translateX(100%);
   }
 }
 
 .c-chat__wrapper {
-  padding: 1em 0 1em 0.5em;
+  padding: 1em 0 0.5em 0.5em;
 }
 
 .c-chat-item {
