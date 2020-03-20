@@ -11,6 +11,7 @@ const env = process.env.NODE_ENV
 const config = {}
 
 const entryPoints = {
+  ac: './src/ac.tsx',
   bloodstained: './src/bloodstained.tsx',
   pixie: './src/pixie.tsx',
   lwa: './src/lwa.tsx',
