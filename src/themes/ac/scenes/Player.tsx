@@ -8,12 +8,12 @@ import { SixteenNineVideoPlaceholder } from '../../../components/VideoPlaceholde
 import Message from '../components/Message'
 
 import sidebarbg from '../../../assets/themes/ac/sidebar.png'
+import status from '../../../assets/themes/ac/status.png'
 
 const Player: FunctionComponent = () => (
   <Scene className="c-player-scene">
     <CutoutWrapper>
       <Layer className="c-player-scene__background" />
-
       <Layer>
         <img src={sidebarbg} />
       </Layer>
@@ -26,6 +26,10 @@ const Player: FunctionComponent = () => (
         <div className="c-player__spacer"></div>
       </Layer>
     </CutoutWrapper>
+
+    <Layer>
+      <img src={status} />
+    </Layer>
 
     <Layer className="c-player-scene__sidebar">
       <Chat messageComponent={Message} />
