@@ -1,0 +1,15 @@
+.c-typed-text {
+  position: relative;
+  display: block;
+
+  &__placeholder {
+    visibility: hidden;
+  }
+
+  &__typing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}

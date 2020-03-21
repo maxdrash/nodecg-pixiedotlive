@@ -2,6 +2,7 @@ import { ChatMessage } from 'nodecg-twitchie'
 import { FunctionComponent, h } from 'preact'
 
 import MessageTokens from '../../../components/Chat/MessageTokens'
+import TextToken from './TextToken'
 
 interface MessageProps {
   message: ChatMessage
@@ -38,7 +39,7 @@ const Message: FunctionComponent<MessageProps> = ({ message }) => (
         </svg>
       </div>
 
-      <MessageTokens tokens={message.tokens} />
+      <MessageTokens TextComponent={TextToken} tokens={message.tokens} />
     </div>
   </div>
 )

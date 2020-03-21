@@ -51,19 +51,6 @@ body {
   }
 }
 
-.c-wiggle-text {
-  font-family: $header-font-family;
-
-  &__letter {
-    display: inline-block;
-    position: relative;
-  }
-
-  &__spacer {
-    width: 0.35em;
-  }
-}
-
 .c-game-info {
   color: #fbe3a4;
 }

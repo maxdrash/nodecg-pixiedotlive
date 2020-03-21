@@ -1,28 +1,37 @@
 import { ChatMessageToken } from 'nodecg-twitchie'
-import { Fragment, FunctionComponent, h } from 'preact'
+import { ComponentType, Fragment, FunctionComponent, h } from 'preact'
 
-import CheerToken from './CheerToken'
-import EmoteToken from './EmoteToken'
-import TextToken from './TextToken'
+import CheerToken, { CheerTokenProps } from './CheerToken'
+import EmoteToken, { EmoteTokenProps } from './EmoteToken'
+import TextToken, { TextTokenProps } from './TextToken'
 
 interface MessageTokensProps {
+  EmoteComponent?: ComponentType<EmoteTokenProps>
+  CheerComponent?: ComponentType<CheerTokenProps>
+  TextComponent?: ComponentType<TextTokenProps>
   tokens: ChatMessageToken[]
 }
 
-const MessageTokens: FunctionComponent<MessageTokensProps> = ({ tokens }) => (
+const MessageTokens: FunctionComponent<MessageTokensProps> = ({
+  EmoteComponent = EmoteToken,
+  CheerComponent = CheerToken,
+  TextComponent = TextToken,
+  tokens,
+}) => (
   <Fragment>
     {tokens.map(token => {
       if (token.type === 'emote') {
-        return <EmoteToken token={token} />
+        return <EmoteComponent token={token} />
       }
 
       if (token.type === 'cheer') {
-        return <CheerToken token={token} />
+        return <CheerComponent token={token} />
       }
 
-      return <TextToken token={token} />
+      return <TextComponent token={token} />
     })}
   </Fragment>
 )
 
+export { MessageTokensProps }
 export default MessageTokens

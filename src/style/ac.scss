@@ -27,10 +27,10 @@ body {
 .c-player-scene__background {
   background: #f8f8f0;
   background-image: url('../assets/themes/ac/pattern.png');
-  background-size: 140px;
+  background-size: 300px;
   animation: bg-slide 80s linear 0s infinite forwards;
-  height: calc(100% + 140px);
-  width: calc(100% + 140px);
+  height: calc(100% + 300px);
+  width: calc(100% + 300px);
 }
 
 @keyframes bg-slide {
@@ -38,17 +38,17 @@ body {
     transform: translate3d(0px, 0px, 1px);
   }
   100% {
-    transform: translate3d(-140px, -140px, 1px);
+    transform: translate3d(-300px, -300px, 1px);
   }
 }
 
 .c-chat__wrapper {
-  padding: 1em 0;
+  padding: 0.65em 0;
 }
 
 .c-chat-message {
-  margin-left: -0.75em;
-  margin-bottom: 0.75em;
+  margin-left: -0.65em;
+  margin-bottom: 0.65em;
   margin-right: -1em;
 }
 
@@ -76,6 +76,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  word-break: break-word;
 }
 
 .c-message__bg {

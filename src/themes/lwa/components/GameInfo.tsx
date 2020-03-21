@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux'
 
 import { getGameInfo } from 'nodecg-twitchie-graphics'
 
-import WiggleText from './WiggleText'
+import Wiggle from '../../../components/TextEffects/Wiggle'
 
 const GameInfo: FunctionComponent = () => {
   const game = useSelector(getGameInfo)
 
   return (
     <div className="c-game-info">
-      we're playing <WiggleText className="c-game-info__name" text={game.name} />
+      we're playing <Wiggle className="c-game-info__name" text={game.name} />
     </div>
   )
 }
