@@ -1,59 +1,43 @@
-import { FunctionComponent, h } from 'preact'
-import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
+import classnames from 'classnames'
+import { ComponentChildren, FunctionComponent, h, toChildArray } from 'preact'
 
-const DEFAULT_INTERVAL = 25
-const DEFAULT_DELAY = 0
+import useTypingEffect from './utils/useTypingEffect'
 
-interface TypedProps {
+interface TypedOptions {
   interval?: number
   delay?: number
+}
+
+type TypedMessageProps = TypedOptions & {
   message: string
 }
 
-const Typed: FunctionComponent<TypedProps> = ({ interval = DEFAULT_INTERVAL, delay = DEFAULT_DELAY, message }) => {
-  const messageArray = useMemo(() => Array.from(message), [message])
+type TypedProps = TypedOptions & {
+  children: ComponentChildren
+}
 
-  const [characterIndex, setCharacterIndex] = useState<number>(0)
-  const lastUpdate = useRef<number>(Date.now())
-  const animationTimeout = useRef<number>()
-  const animationCallback = useRef<() => void>()
+const TypedMessage: FunctionComponent<TypedMessageProps> = ({ message, ...props }) => (
+  <Typed {...props}>{Array.from(message)}</Typed>
+)
 
-  const typedMessage = useMemo(() => messageArray.slice(0, characterIndex + 1).join(''), [characterIndex, messageArray])
-
-  // @ts-ignore
-  animationCallback.current = useCallback(() => {
-    if (Date.now() > lastUpdate.current + interval) {
-      setCharacterIndex(characterIndex + 1)
-      lastUpdate.current = Date.now()
-    }
-
-    if (characterIndex < messageArray.length) {
-      // @ts-ignore
-      animationTimeout.current = requestAnimationFrame(animate)
-    }
-  }, [characterIndex, messageArray])
-
-  const animate = () => {
-    animationCallback.current!()
-  }
-
-  useLayoutEffect(() => {
-    cancelAnimationFrame(animationTimeout.current!)
-    setCharacterIndex(0)
-    lastUpdate.current = Date.now() + delay
-
-    // @ts-ignore
-    animationTimeout.current = requestAnimationFrame(animate)
-
-    return () => cancelAnimationFrame(animationTimeout.current!)
-  }, [message])
+const Typed: FunctionComponent<TypedProps> = ({ interval, delay, children }) => {
+  const childArray = toChildArray(children)
+  const [typingIndex] = useTypingEffect(childArray.length, { interval, delay })
 
   return (
-    <span className="c-typed-text">
-      <span className="c-typed-text__placeholder">{message}</span>
-      <span className="c-typed-text__typing">{typedMessage}</span>
+    <span className="c-typed">
+      {childArray.map((child, idx) => (
+        <span
+          className={classnames('c-typed__token', {
+            'c-typed__token--visible': typingIndex >= idx,
+          })}
+        >
+          {child}
+        </span>
+      ))}
     </span>
   )
 }
 
+export { TypedMessage }
 export default Typed

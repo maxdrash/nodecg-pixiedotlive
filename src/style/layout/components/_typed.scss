@@ -1,15 +1,9 @@
-.c-typed-text {
-  position: relative;
-  display: block;
+.c-typed__token {
+  visibility: hidden;
+  display: inline;
+  vertical-align: middle;
+}
 
-  &__placeholder {
-    visibility: hidden;
-  }
-
-  &__typing {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
+.c-typed__token--visible {
+  visibility: visible;
 }

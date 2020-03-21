@@ -3,22 +3,21 @@ import { ComponentType, Fragment, FunctionComponent, h } from 'preact'
 
 import CheerToken, { CheerTokenProps } from './CheerToken'
 import EmoteToken, { EmoteTokenProps } from './EmoteToken'
-import TextToken, { TextTokenProps } from './TextToken'
 
 interface MessageTokensProps {
+  WrapperComponent?: ComponentType<any>
   EmoteComponent?: ComponentType<EmoteTokenProps>
   CheerComponent?: ComponentType<CheerTokenProps>
-  TextComponent?: ComponentType<TextTokenProps>
   tokens: ChatMessageToken[]
 }
 
 const MessageTokens: FunctionComponent<MessageTokensProps> = ({
+  WrapperComponent = Fragment,
   EmoteComponent = EmoteToken,
   CheerComponent = CheerToken,
-  TextComponent = TextToken,
   tokens,
 }) => (
-  <Fragment>
+  <WrapperComponent>
     {tokens.map(token => {
       if (token.type === 'emote') {
         return <EmoteComponent token={token} />
@@ -28,9 +27,9 @@ const MessageTokens: FunctionComponent<MessageTokensProps> = ({
         return <CheerComponent token={token} />
       }
 
-      return <TextComponent token={token} />
+      return Array.from(token.text)
     })}
-  </Fragment>
+  </WrapperComponent>
 )
 
 export { MessageTokensProps }

@@ -19,6 +19,12 @@ $nameplate-fg-color: #521702;
 $message-bg-color: #fff9e5;
 $message-fg-color: #82735c;
 
+.o-emote {
+  height: 1.2em;
+  margin-right: 0;
+  vertical-align: middle;
+}
+
 body {
   color: #6b5c43;
   font-family: $base-font;
@@ -40,16 +46,6 @@ body {
   100% {
     transform: translate3d(-300px, -300px, 1px);
   }
-}
-
-.c-chat__wrapper {
-  padding: 0.65em 0;
-}
-
-.c-chat-message {
-  margin-left: -0.65em;
-  margin-bottom: 0.65em;
-  margin-right: -1em;
 }
 
 .c-dialog {
@@ -169,4 +165,18 @@ body {
   100% {
     transform: scale(1);
   }
+}
+
+.c-chat__wrapper {
+  padding: 0.65em 0;
+}
+
+.c-chat-message {
+  margin-left: -0.65em;
+  margin-bottom: 0.65em;
+  margin-right: -1em;
+}
+
+.c-chat-message__message {
+  padding-right: 1.7em;
 }
