@@ -43,8 +43,10 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "@types/color": "^3.0.1",
     "@types/react-motion": "0.0.29",
     "classnames": "^2.2.6",
+    "color": "^3.1.2",
     "nodecg-twitchie": "^2.4.0",
     "nodecg-twitchie-graphics": "^2.5.0",
     "preact": "^10.3.4",
