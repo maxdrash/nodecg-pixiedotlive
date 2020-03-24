@@ -6,6 +6,7 @@ import Scene, { Layer } from '../../../components/Scene'
 import { SixteenNineVideoPlaceholder } from '../../../components/VideoPlaceholder'
 
 import Message from '../components/Message'
+import Notification from '../components/Notification'
 
 import sidebarbg from '../../../assets/themes/ac/sidebar.png'
 import status from '../../../assets/themes/ac/status.png'
@@ -32,7 +33,7 @@ const Player: FunctionComponent = () => (
     </Layer>
 
     <Layer className="c-player-scene__sidebar">
-      <Chat messageComponent={Message} />
+      <Chat messageComponent={Message} notificationComponent={Notification} />
     </Layer>
   </Scene>
 )

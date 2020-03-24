@@ -54,10 +54,7 @@ body {
 
 .c-dialog__nameplate {
   font-size: 0.85em;
-}
-
-.c-dialog__message {
-  margin-top: -0.5em;
+  height: 1em;
 }
 
 .c-message {
@@ -171,12 +168,12 @@ body {
   padding: 0.65em 0;
 }
 
-.c-chat-message {
+.c-chat-item {
   margin-left: -0.65em;
   margin-bottom: 0.65em;
   margin-right: -1em;
 }
 
-.c-chat-message__message {
+.c-chat-item__message {
   padding-right: 1.7em;
 }
