@@ -7,4 +7,5 @@ interface TextTokenProps {
 
 const TextToken: FunctionComponent<TextTokenProps> = ({ token }) => <Fragment>{token.text}</Fragment>
 
+export { TextTokenProps }
 export default TextToken

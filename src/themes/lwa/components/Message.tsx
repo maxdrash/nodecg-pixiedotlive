@@ -2,7 +2,7 @@ import { ChatMessage } from 'nodecg-twitchie'
 import { FunctionComponent, h } from 'preact'
 
 import MessageTokens from '../../../components/Chat/MessageTokens'
-import WiggleText from './WiggleText'
+import Wiggle from '../../../components/TextEffects/Wiggle'
 
 interface MessageProps {
   message: ChatMessage
@@ -18,7 +18,7 @@ const Message: FunctionComponent<MessageProps> = ({ message }) => (
     </svg>
 
     <div className="c-chat-message__user">
-      <WiggleText text={message.user.name} />
+      <Wiggle text={message.user.name} />
     </div>
 
     <div className="c-chat-message__message">

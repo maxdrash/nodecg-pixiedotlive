@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import { FunctionComponent, h } from 'preact'
 
-import WiggleText from '../WiggleText'
+import Wiggle from '../../../../components/TextEffects/Wiggle'
 
 interface SocialLinkItemProps {
   service: string
@@ -16,7 +16,7 @@ const SocialLinkItem: FunctionComponent<SocialLinkItemProps> = ({ service, class
     </svg>
 
     <span className="c-social-account c-social-account__name">
-      <WiggleText text={username} />
+      <Wiggle text={username} />
     </span>
   </span>
 )

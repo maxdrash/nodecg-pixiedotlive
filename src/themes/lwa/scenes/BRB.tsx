@@ -3,7 +3,7 @@ import { FunctionComponent, h } from 'preact'
 import { useSelector } from 'react-redux'
 
 import Scene, { Layer } from '../../../components/Scene'
-import WiggleText from '../components/WiggleText'
+import Wiggle from '../../../components/TextEffects/Wiggle'
 
 import dani from '../../../assets/themes/lwa/dani.png'
 import logo from '../../../assets/themes/lwa/little-witch-academia-logo.png'
@@ -21,7 +21,7 @@ const BRB: FunctionComponent = () => {
       <Layer className="c-brb__text">
         <img src={logo} className="c-brb__logo" />
         <div className="c-brb__message">
-          <WiggleText text={brbStatus.message} />
+          <Wiggle text={brbStatus.message} />
         </div>
       </Layer>
 

@@ -2,14 +2,14 @@ import classnames from 'classnames'
 import { h } from 'preact'
 import { PureComponent } from 'preact/compat'
 
-interface WiggleTextProps {
+interface WiggleProps {
   text?: string
   className?: string
 }
 
 const random = (min: number, max: number) => (Math.random() * (min - max) + max).toFixed(2)
 
-class WiggleText extends PureComponent<WiggleTextProps> {
+class Wiggle extends PureComponent<WiggleProps> {
   public render() {
     const { text, className } = this.props
 
@@ -38,4 +38,4 @@ class WiggleText extends PureComponent<WiggleTextProps> {
   }
 }
 
-export default WiggleText
+export default Wiggle
