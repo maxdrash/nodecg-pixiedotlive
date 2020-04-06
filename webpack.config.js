@@ -12,6 +12,7 @@ const config = {}
 
 const entryPoints = {
   ac: './src/ac.tsx',
+  ff7: './src/ff7.tsx',
   bloodstained: './src/bloodstained.tsx',
   pixie: './src/pixie.tsx',
   lwa: './src/lwa.tsx',

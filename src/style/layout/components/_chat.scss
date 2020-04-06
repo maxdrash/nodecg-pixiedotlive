@@ -12,6 +12,8 @@
   animation-iteration-count: 1;
   animation-delay: 0.05s;
   animation-fill-mode: both;
+
+  word-break: break-word;
 }
 
 @keyframes message-popin {
