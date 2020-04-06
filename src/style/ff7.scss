@@ -21,7 +21,11 @@ $lifestream-dull: #7ee6c0;
 
 body {
   color: #fff;
-  background: #000;
+}
+
+.c-mako {
+  width: 100%;
+  height: 100%;
 }
 
 .c-chat {
@@ -31,7 +35,7 @@ body {
 }
 
 .c-chat__wrapper {
-  padding: 1.5em 1.5em 1em 0.5em;
+  padding: 1.5em 1.15em 1em 0.7em;
 }
 
 .c-chat-item {

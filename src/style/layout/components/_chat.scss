@@ -16,6 +16,12 @@
   word-break: break-word;
 }
 
+.c-chat-message__user {
+  word-break: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @keyframes message-popin {
   0% {
     opacity: 0;

@@ -1,16 +1,18 @@
 import { h } from 'preact'
+
 import OverlayProvider from '../../overlay-provider'
 
+import Scene from '../../components/Scene'
 import BRB from '../../scenes/BRB'
 import Player from '../../scenes/Player'
-import Scene, { Layer } from '../../components/Scene'
+import Mako from './components/Mako'
 
 import '../../style/ff7.scss'
 
 const FF7Overlay = () => (
   <OverlayProvider>
     <Scene>
-      <Layer className="c-mako" />
+      <Mako />
     </Scene>
 
     <BRB />
