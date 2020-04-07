@@ -16,6 +16,7 @@ $ui-text-colour: #b7ddff;
 
 $lifestream-bright: #cefffd;
 $lifestream-dull: #7ee6c0;
+$lifestream-dark: #010a05;
 
 @import 'layout/base';
 
@@ -24,9 +25,30 @@ body {
 }
 
 .c-mako {
-  width: 100%;
+  background: $lifestream-dark;
   height: 100%;
+  width: 100%;
+}
+
+.c-mako__particles {
+  height: 100%;
+  width: 100%;
   filter: blur(3px);
+  animation: mako-blubbrbrb 20s linear infinite;
+}
+
+@keyframes mako-blubbrbrb {
+  0% {
+    filter: blur(3px);
+  }
+
+  33% {
+    filter: blur(5px);
+  }
+
+  66% {
+    filter: blur(3px);
+  }
 }
 
 .c-chat {
@@ -48,7 +70,7 @@ body {
   background: $ui-background-colour;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-right: 0.125em solid $ui-highlight-colour;
-  box-shadow: inset -0.25em 0 1em transparentize($ui-foreground-colour, 0.5);
+  box-shadow: inset -0.25em 0 1em transparentize($ui-foreground-colour, 0.6);
 }
 
 .c-chat-message__user {
