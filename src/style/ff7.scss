@@ -7,7 +7,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Final Fontasy Pixels';
+  src: url('../assets/fonts/ff7/final-fontasy-pixels.ttf');
+  font-weight: $font-weight-regular;
+  font-style: normal;
+}
+
 $body-font-family: 'Final Fontasy', sans-serif;
+$retro-font-family: 'Final Fontasy Pixels', sans-serif;
 
 $ui-highlight-colour: #2dc8d4;
 $ui-foreground-colour: #084487;
@@ -64,6 +72,22 @@ body {
 .c-chat-item {
   animation-name: ff7-message-popin;
   font-size: 0.9em;
+}
+
+.c-chat-notification {
+  font-family: $retro-font-family;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+
+  background: #04009d linear-gradient(to bottom, #04009d 0%, #06004d 100%);
+  border: solid 1px #424542;
+  border-radius: 7px;
+  box-shadow: 1px 1px #e7dfe7, -1px -1px #e7dfe7, 1px -1px #e7dfe7, -1px 1px #e7dfe7, 0 -2px #9c9a9c, -2px 0 #7b757b,
+    0 2px #424542;
+
+  padding: 0.3em 0.5em 0.4em;
+  color: #fff;
+  text-shadow: 2px 2px #212421, 1px 1px #212021;
 }
 
 .c-chat-message {
