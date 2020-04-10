@@ -9,7 +9,7 @@ import glow from '../../../assets/themes/ff7/bg-glow.png'
 import logo from '../../../assets/themes/ff7/bg-logo.png'
 import squad from '../../../assets/themes/ff7/bg-squad.png'
 
-import Mako from './Mako'
+import Mako from '../components/Mako'
 
 const BRB: FunctionComponent = () => {
   const brbStatus: BRBStatus = useSelector((state: any) => state.brb)
