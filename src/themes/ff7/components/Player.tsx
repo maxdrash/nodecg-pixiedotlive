@@ -12,7 +12,7 @@ import Mako from './Mako'
 const Player: FunctionComponent = () => (
   <Scene className="c-player-scene">
     <CutoutWrapper>
-      <Layer>
+      <Layer className="c-player-scene__background">
         <Mako />
       </Layer>
 

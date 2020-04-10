@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { useEffect, useRef } from 'preact/hooks'
+import { useEffect, useMemo, useRef } from 'preact/hooks'
 
 import 'particles.js'
 
@@ -59,6 +59,13 @@ const config = {
 
 const Mako = () => {
   const divRef = useRef<HTMLDivElement>()
+  const id = useMemo(
+    () =>
+      `mako-${Math.random()
+        .toString(36)
+        .substring(2, 15)}`,
+    []
+  )
 
   useEffect(() => {
     ;(window as any).particlesJS(divRef.current!.id, config)
@@ -66,7 +73,7 @@ const Mako = () => {
 
   return (
     <div className="c-mako">
-      <div className="c-mako__particles" ref={divRef} id="mako" />
+      <div className="c-mako__particles" ref={divRef} id={id} />
     </div>
   )
 }

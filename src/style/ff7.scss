@@ -25,6 +25,7 @@ $ui-text-colour: #b7ddff;
 $lifestream-bright: #cefffd;
 $lifestream-dull: #7ee6c0;
 $lifestream-dark: #010a05;
+$lifestream-glow: #1f463d;
 
 @import 'layout/base';
 
@@ -32,8 +33,11 @@ body {
   color: #fff;
 }
 
-.c-mako {
+.c-player-scene__background {
   background: $lifestream-dark;
+}
+
+.c-mako {
   height: 100%;
   width: 100%;
 }
@@ -41,7 +45,7 @@ body {
 .c-mako__particles {
   height: 100%;
   width: 100%;
-  filter: blur(3px) saturate(2);
+  filter: blur(3px) saturate(1.5);
 }
 
 .c-chat {
@@ -57,6 +61,8 @@ body {
 .c-chat-item {
   animation-name: ff7-message-popin;
   font-size: 0.9em;
+
+  transform: translateZ(0);
 }
 
 .c-chat-notification {
@@ -138,4 +144,31 @@ body {
 
 .c-social-account__name {
   font-size: 0.9em;
+}
+
+.c-brb-scene__message {
+  top: 70%;
+  left: 3em;
+  bottom: 3em;
+  right: 60%;
+}
+
+.c-dialog {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  color: #d7d8d8;
+  font-size: 1.5em;
+}
+
+.c-dialog__divider {
+  height: 2px;
+  margin: 0.25em 0 0.5em;
+  background: linear-gradient(90deg, currentColor 0, transparent);
+  width: 25%;
+}
+
+.c-dialog__nameplate {
+}
+
+.c-dialog__message {
+  text-align: center;
 }

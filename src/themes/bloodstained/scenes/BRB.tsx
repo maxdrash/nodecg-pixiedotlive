@@ -1,9 +1,9 @@
+import { BRBStatus } from 'nodecg-twitchie-graphics'
 import { FunctionComponent, h } from 'preact'
 import { useSelector } from 'react-redux'
 
 import Scene, { Layer } from '../../../components/Scene'
 
-import { BRBStatus } from 'nodecg-twitchie-graphics'
 import box from '../../../assets/themes/bloodstained/brb-ui.png'
 import dani from '../../../assets/themes/bloodstained/dani-2.webm'
 
