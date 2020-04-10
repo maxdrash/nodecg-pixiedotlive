@@ -15,7 +15,7 @@ const SocialLinkItem: FunctionComponent<SocialLinkItemProps> = ({ service, class
       <use xlinkHref={`#${service}`} />
     </svg>
 
-    <span className="c-social-account c-social-account__name">
+    <span className="c-social-account__name">
       <Wiggle text={username} />
     </span>
   </span>

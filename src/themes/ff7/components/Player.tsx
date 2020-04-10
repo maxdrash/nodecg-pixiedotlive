@@ -27,11 +27,11 @@ const Player: FunctionComponent = () => (
           <NowPlaying />
         </div>
       </Layer>
-
-      <Layer className="c-player-scene__sidebar">
-        <Chat />
-      </Layer>
     </CutoutWrapper>
+
+    <Layer className="c-player-scene__sidebar">
+      <Chat />
+    </Layer>
   </Scene>
 )
 

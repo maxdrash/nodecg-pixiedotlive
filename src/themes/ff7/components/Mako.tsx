@@ -6,7 +6,7 @@ import 'particles.js'
 const config = {
   particles: {
     number: {
-      value: 180,
+      value: 150,
       density: {
         enable: true,
         value_area: 1000,
@@ -19,22 +19,22 @@ const config = {
       type: 'circle',
     },
     opacity: {
-      value: 0.75,
+      value: 1,
       random: true,
       anim: {
         enable: true,
-        speed: 0.33,
-        opacity_min: 0,
+        speed: 0.4,
+        opacity_min: 0.4,
         sync: false,
       },
     },
     size: {
-      value: 9,
+      value: 4,
       random: true,
       anim: {
         enable: true,
         speed: 1,
-        size_min: 0.1,
+        size_min: 0.4,
         sync: false,
       },
     },
@@ -43,7 +43,7 @@ const config = {
     },
     move: {
       enable: true,
-      speed: 0.5,
+      speed: 0.35,
       direction: 'top',
       random: true,
       straight: false,

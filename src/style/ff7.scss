@@ -19,7 +19,7 @@ $retro-font-family: 'Final Fontasy Pixels', sans-serif;
 
 $ui-highlight-colour: #2dc8d4;
 $ui-foreground-colour: #084487;
-$ui-background-colour: rgba(13, 35, 78, 0.65);
+$ui-background-colour: rgba(13, 35, 78, 0.5);
 $ui-text-colour: #b7ddff;
 
 $lifestream-bright: #cefffd;
@@ -41,22 +41,7 @@ body {
 .c-mako__particles {
   height: 100%;
   width: 100%;
-  filter: blur(3px);
-  animation: mako-blubbrbrb 20s linear infinite;
-}
-
-@keyframes mako-blubbrbrb {
-  0% {
-    filter: blur(3px);
-  }
-
-  33% {
-    filter: blur(5px);
-  }
-
-  66% {
-    filter: blur(3px);
-  }
+  filter: blur(3px) saturate(2);
 }
 
 .c-chat {
@@ -75,6 +60,8 @@ body {
 }
 
 .c-chat-notification {
+  position: relative;
+
   font-family: $retro-font-family;
   font-size: 1.2em;
   letter-spacing: 0.05em;
@@ -88,6 +75,17 @@ body {
   padding: 0.3em 0.5em 0.4em;
   color: #fff;
   text-shadow: 2px 2px #212421, 1px 1px #212021;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 24px;
+    left: -32px;
+    top: 0.6em;
+    background: url('../assets/themes/ff7/cursor.png') no-repeat;
+    background-size: contain;
+  }
 }
 
 .c-chat-message {
@@ -115,4 +113,29 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+.c-social-account {
+  background: $ui-background-colour;
+  border: 1px solid $ui-foreground-colour;
+  border-right-width: 0;
+  margin-top: 1px;
+}
+
+.c-social-account__icon-wrapper {
+  background: $ui-foreground-colour;
+}
+
+.c-social-account__icon {
+  margin: 0;
+  vertical-align: -4px;
+}
+
+.c-social-account__icon-wrapper,
+.c-social-account__name {
+  padding: 0.35em 0.5em;
+}
+
+.c-social-account__name {
+  font-size: 0.9em;
 }
