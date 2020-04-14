@@ -9,8 +9,6 @@ import glow from '../../../assets/themes/ff7/bg-glow.png'
 import logo from '../../../assets/themes/ff7/bg-logo.png'
 import squad from '../../../assets/themes/ff7/bg-squad.png'
 
-import Mako from '../components/Mako'
-
 const BRB: FunctionComponent = () => {
   const brbStatus: BRBStatus = useSelector((state: any) => state.brb)
 
@@ -21,9 +19,6 @@ const BRB: FunctionComponent = () => {
       </Layer>
       <Layer>
         <img src={glow} />
-      </Layer>
-      <Layer>
-        <Mako />
       </Layer>
       <Layer>
         <img src={squad} />

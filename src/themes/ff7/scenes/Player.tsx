@@ -7,14 +7,15 @@ import SocialLinks from '../../../components/SocialLinks'
 import { SixteenNineVideoPlaceholder } from '../../../components/VideoPlaceholder'
 
 import status from '../../../assets/themes/ff7/bg-status.png'
-
-import Mako from '../components/Mako'
+import mako from '../../../assets/themes/ff7/mako.mp4'
 
 const Player: FunctionComponent = () => (
   <Scene className="c-player-scene">
     <CutoutWrapper>
       <Layer className="c-player-scene__background">
-        <Mako />
+        <video autoPlay muted loop className="c-dani">
+          <source src={mako} type="video/mp4" />
+        </video>
       </Layer>
 
       <Layer>
