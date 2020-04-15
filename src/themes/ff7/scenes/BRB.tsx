@@ -7,7 +7,7 @@ import Scene, { Layer } from '../../../components/Scene'
 import facility from '../../../assets/themes/ff7/bg-facility.png'
 import glow from '../../../assets/themes/ff7/bg-glow.png'
 import logo from '../../../assets/themes/ff7/bg-logo.png'
-import squad from '../../../assets/themes/ff7/bg-squad.png'
+import squad from '../../../assets/themes/ff7/bg-squad-full.png'
 
 const BRB: FunctionComponent = () => {
   const brbStatus: BRBStatus = useSelector((state: any) => state.brb)
