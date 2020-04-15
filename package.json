@@ -48,7 +48,7 @@
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "nodecg-twitchie": "^2.4.0",
-    "nodecg-twitchie-graphics": "^2.5.0",
+    "nodecg-twitchie-graphics": "^2.5.1",
     "particles.js": "^2.0.0",
     "preact": "^10.3.4",
     "preact-context": "^1.1.4",
